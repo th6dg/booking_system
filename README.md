@@ -7,7 +7,7 @@ When techniques shipping into product
 
 ## 🌟 Technique generation 1:
 - DSA : array, array list, queue
-- Concurrent programming in java: thread, synchnozied,locking
+- Operating System: thread, synchnozied,locking
 - Database: SQL Native full control, Index, Transaction
 - Network: RESTapi
 - OOP: Dependency inversion principle
