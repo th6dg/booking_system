@@ -8,9 +8,17 @@ import com.example.demo.dto.user.CreateUserRequest;
 import com.example.demo.entity.security.UserPrincipal;
 import com.example.demo.entity.user.Users;
 import com.example.demo.service.async.AsyncService;
+import com.example.demo.service.async.AsyncServiceV2;
+import com.example.demo.service.async.AsyncServiceV3Test;
 import com.example.demo.service.login.AuthenticationService;
 import com.example.demo.service.login.JwtService;
 import com.example.demo.service.user.UserService;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +30,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 public class HelloController {
-
-    private final UserService userService;
+    @Autowired
+    private AsyncServiceV2 asyncServiceV2;
+    
+    @Autowired
+    private UserService userService;
+    
     @Autowired
     private JwtService jwtService;
 
@@ -33,21 +45,30 @@ public class HelloController {
     @Autowired
     private AsyncService asyncService;
 
-    HelloController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private AsyncServiceV3Test asyncServiceV3Test;
+    
+
 
     @GetMapping("/hello")
-    public String Helloworld() throws InterruptedException {
+    public String Helloworld(@RequestParam(name = "index") int index) throws InterruptedException {
 
-        System.err.println("hello with thread: "+ Thread.currentThread().getId());
-        for (int i = 0; i<5; i++) {
-            System.out.println(Thread.currentThread().getId() + ": " + i);
-            Thread.sleep(5000);
-        }
-        System.err.println("Finished thread: "+ Thread.currentThread().getId());
+        //System.err.println("hello with thread: "+ Thread.currentThread().getId());
+        
+        System.err.println("thread: "+ Thread.currentThread().getId()+" and number: "+ index);
+        asyncServiceV3Test.AddRequest(index);;
+        //System.err.println("Finished thread: "+ Thread.currentThread().getId() + " number "+ index);
         return "hello world";
     }
+
+    @GetMapping("/hello/process")
+    public void ProcessQueue() throws InterruptedException {
+        System.out.println("Starting process loop.....");
+        asyncServiceV3Test.PopRequest();
+        
+        
+    }
+    
 
     @GetMapping("/student")
     public  String student(){
