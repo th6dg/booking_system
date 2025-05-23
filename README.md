@@ -10,4 +10,4 @@
 - Operating System: thread, synchnozied,locking
 - Database: SQL Native full control, Index, Transaction
 - Network: RESTapi
-- OOP: Dependency inversion principle
+- OOP: low coupling, high conhension, SOLID principle
