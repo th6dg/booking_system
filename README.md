@@ -3,8 +3,10 @@
 
 ## 🌟 Feature
 - The more complex feature, the more complex technique
-- Most complex feature: Booking flow with high request (1000 requests per second)
-
+- Use Case: Book Reservation System
+- Use Case: Simple Search/Sort Operations
+- Use case: Calculate books get highest price borrowing
+- Use case: Tracking user behaviour
 ## 🌟 Technique generation 1:
 - DSA : array, array list, queue
 - Operating System: thread, synchnozied,locking
