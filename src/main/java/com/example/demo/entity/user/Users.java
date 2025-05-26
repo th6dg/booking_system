@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 // Users class that represent entity store in DB
 @Entity
 @Builder
-@Table(name = "authentication", schema = "example_DB")
+@Table(name = "auth", schema = "example_DB")
 @NoArgsConstructor 
 @AllArgsConstructor
 @Data

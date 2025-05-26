@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.example.demo.service.login.MyUserDetailsService;
+import com.example.demo.Iservice.login.MyUserDetailsService;
 
 import org.springframework.security.config.Customizer;
 
@@ -53,11 +53,8 @@ public class SecurityConfig {
             //.httpBasic(Customizer.withDefaults())
             .authorizeHttpRequests(
                 authorizeRequest -> authorizeRequest
-                        .requestMatchers("/student").hasAuthority("student")
-                        .requestMatchers("/admin").hasAuthority("admin")
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/hello/**").permitAll()
-                        .anyRequest().authenticated())
+                        .requestMatchers("**").permitAll()
+                        )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authenticationProvider(authenticationProvider())
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

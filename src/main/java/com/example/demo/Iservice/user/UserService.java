@@ -1,4 +1,4 @@
-package com.example.demo.service.user;
+package com.example.demo.Iservice.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
