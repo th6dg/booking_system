@@ -1,6 +1,5 @@
 # Booking_system
-## See newest branch {{ booking_V2 }}
-
+## See newest branch 
 ##  Feature
 - The more complex feature, the more complex technique
 - Use Case: Book Reservation System
