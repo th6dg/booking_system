@@ -34,3 +34,27 @@ Ex: Hệ thống triển khai trên Kubernetes cluster, 3 node app, 2 node datab
 
 ### Code Diagram: For dev, coder - which details in component (class and method) (Level 3)
 <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F0na019rcggkbklm9az95.png" width="600">
+
+
+<pre>
+    _______________     _____________     ______________
+    |   Use Case  |     |    DFD    |     |  Sequence  |
+    |   Diagram   |     |  Diagram  |     |  Diagram   |
+    |_____________|     |___________|     |____________|
+
+    _______________     ______________    ______________     
+    |   Class     |     | Deployment |    |  Database  |
+    |   Diagram   |     |   Diagram  |    |  Design    |
+    |_____________|     |____________|    |____________|
+
+    ____________________________                               ______________________
+    |   Association (USE-A)    |                               |        CRUD        |
+    |                          |                _______________|____________________|________________
+    |   Aggregation (HAS-A)    |                |                                                   |    
+    |   Composition            |                |               BUSINESS LOGIC                      |
+    |                          |                |               SECURITY                            |
+    |   Inheitance  (IS-A)     |                |               PERFORMANCE                         |
+    |   Dependency             |                |               SCALABILITY                         |
+    |__________________________|                |               .....                               |
+                                                |___________________________________________________|
+</pre>
