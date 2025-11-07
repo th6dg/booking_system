@@ -1,4 +1,4 @@
-package com.example.Engine.model;
+package com.example.Engine.entity;
 
 import com.example.Engine.constant.roomStatus;
 import com.example.Engine.constant.roomType;
@@ -18,6 +18,7 @@ import static com.example.Engine.constant.roomStatus.AVAILABLE;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "roomId")
     private Long roomId;
 
     @Enumerated(EnumType.STRING)

@@ -1,7 +1,10 @@
-package com.example.Engine.model;
+package com.example.Engine.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
@@ -10,11 +13,11 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @Entity
-@Table(name = "location")
-public class Location {
+@Table(name = "address")
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long locationId;
+    private Long addressId;
 
     private String country;
     private String province;

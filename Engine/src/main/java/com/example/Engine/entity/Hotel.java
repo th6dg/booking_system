@@ -1,4 +1,4 @@
-package com.example.Engine.model;
+package com.example.Engine.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

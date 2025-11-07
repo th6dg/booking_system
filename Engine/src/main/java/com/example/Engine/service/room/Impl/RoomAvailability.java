@@ -1,6 +1,6 @@
 package com.example.Engine.service.room.Impl;
 
-import com.example.Engine.model.Room;
+import com.example.Engine.entity.Room;
 import com.example.Engine.repository.room.IRoomRepository;
 import com.example.Engine.service.room.IRoomAvailability;
 import lombok.RequiredArgsConstructor;

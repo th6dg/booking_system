@@ -1,4 +1,4 @@
-package com.example.Engine.model;
+package com.example.Engine.entity;
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor

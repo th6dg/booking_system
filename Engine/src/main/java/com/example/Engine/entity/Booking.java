@@ -1,4 +1,4 @@
-package com.example.Engine.model;
+package com.example.Engine.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -14,7 +14,7 @@ import jakarta.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "dateRange")
+@Table(name = "booking")
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,4 +27,12 @@ public class Booking {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "roomId", nullable = false)
     private Room room;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "paymentId", nullable = false)
+    private Payment payment;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customerId", nullable = false)
+    private Customer customer;
 }

@@ -1,6 +1,6 @@
 package com.example.Engine.service.room;
 
-import com.example.Engine.model.*;
+import com.example.Engine.entity.*;
 
 import java.time.LocalDate;
 import java.util.List;
